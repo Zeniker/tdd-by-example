@@ -23,6 +23,12 @@
             <name>John Thompson</name>
             <email>john@springframework.guru</email>
         </developer>
+
+        <developer>
+            <id>gl</id>
+            <name>Guilherme Lopes Lacerda</name>
+            <email>gui.lls@hotmail.com</email>
+        </developer>
     </developers>
 
     <inceptionYear>2018</inceptionYear>
