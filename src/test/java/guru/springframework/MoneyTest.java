@@ -11,9 +11,9 @@ public class MoneyTest {
     void testMultiplication(){
         Dollar five = new Dollar(5);
         Dollar ten = five.times(2);
-        assertEquals(10, ten.amount);
+        assertEquals(new Dollar(10), ten);
         Dollar fifteen = five.times(3);
-        assertEquals(15, fifteen.amount);
+        assertEquals(new Dollar(15), fifteen);
     }
 
     @Test
