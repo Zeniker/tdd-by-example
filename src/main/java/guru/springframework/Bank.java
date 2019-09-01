@@ -1,13 +1,24 @@
 package guru.springframework;
 
+import java.util.HashMap;
+
 public class Bank {
 
-    Money reduce(Expression source, String toCurrency){
-        return source.reduce(toCurrency);
+    private HashMap<Pair, Integer> rateMap = new HashMap<>();
 
-//        if (source instanceof Money) return (Money) source;
-//        Sum sum = (Sum) source;
-//        return sum.reduce(toCurrency);
+    Money reduce(Expression source, String toCurrency){
+        return source.reduce(this, toCurrency);
     }
 
+    public int rate(String from, String to){
+        if(from.equals(to)){
+            return 1;
+        }else{
+            return rateMap.get(new Pair(from, to));
+        }
+    }
+
+    public void addRate(String from, String to, int rate) {
+        rateMap.put(new Pair(from, to), rate);
+    }
 }
